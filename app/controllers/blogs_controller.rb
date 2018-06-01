@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
   def new
     if params[:back]
      @blog = Blog.new(blog_params)
-     @blog.image.retrieve_from_cache! params[:cache][:image]
+     @blog.image.retrieve_from_cache! params[:cache][:image]if params[:cache][:image].present?
     else
      @blog = Blog.new
 

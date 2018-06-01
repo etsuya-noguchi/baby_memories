@@ -16,9 +16,12 @@
 <div class="container">
   <header>
     <ul class="row">
-      <li class="col-md-4"><a href="http://localhost:3000/tops">TOP PAGE</a></li>
-      <li class="col-md-4"><a href="http://localhost:3000/blogs#">BABY ALBUM</a></li>
-      <li class="col-md-4"><a href="http://localhost:3000/blogs/new#">投稿</a></li>
+      <!-- <li class="col-md-4"><a href="http://localhost:3000/tops">TOP PAGE</a></li> -->
+      <li class="col-md-4"><%= link_to 'TOP PAGE', tops_path %>
+      <li class="col-md-4"><%= link_to 'BABY ALBUM', blogs_path %>
+      <li class="col-md-4"><%= link_to '投稿', new_blog_path %>
+      <!-- <li class="col-md-4"><a href="http://localhost:3000/blogs#">BABY ALBUM</a></li> -->
+      <!-- <li class="col-md-4"><a href="http://localhost:3000/blogs/new#">投稿</a></li> -->
     </ul>
   </header>
 </div>

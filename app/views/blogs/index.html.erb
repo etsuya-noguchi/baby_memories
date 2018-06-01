@@ -1,0 +1,70 @@
+<h1>ALBUM</h1>
+<p><%= notice %></p>
+<div class="content">
+<div class="row">
+  <% @blogs.each do |blog| %>
+    <div class="col-md-3 col-xs-12">
+      <table class="box">
+        <div class="position">
+          <tr class="test">
+            <th></th>
+          </tr>
+          <tr>
+            <th></th>
+          </tr>
+        </div>
+        <tr>
+          <td><%= blog.title %></td>
+        </tr>
+        <tr>
+          <td><%= blog.content %></td>
+        </tr>
+        <tr>
+          <td><%= image_tag blog.image %></td>
+        </tr>
+        <tr>
+          <td><%= link_to '確認する', blog_path(blog.id) %></td>
+        </tr>
+        <tr>
+          <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
+        </tr>
+        <tr>
+          <td><%= link_to '削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+</div>
+</div>
+
+
+
+<br>
+
+<%= link_to '投稿する', new_blog_path %>
+
+<!-- <div class="container">
+<header class="header">Bootstrap</header>
+<nav class="menu">
+      <ul class="row">
+          <li class="col-md-4">top</li>
+          <li class="col-md-4">menu1</li>
+          <li class="col-md-4">menu2</li>
+      </ul>
+</nav>
+<article>
+    <div class="contents">
+        <ul>
+            <li class="col-md-6">contents1</li>
+            <li class="col-md-6">contents2</li>
+        </ul>
+    </div>
+    <div class="topic">
+         <ul>
+            <li>bootstrapを使ってレスポンシブデザインを実現しよう！</li>
+            <li>やればできる！bootstrapを使ってみよう！</li>
+            <li>怖くない！レスポンシブデザインができるようになればWebアプリケーションもワンランク上に！</li>
+        </ul>
+    </div>
+</article>
+</div> -->

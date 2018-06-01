@@ -1,0 +1,35 @@
+<%= form_with(model: @blog, local: true ,url: choose_new_or_edit) do |form| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @blog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="blog_title">
+    <%= form.label :名前 %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="blog_title">
+    <%= form.label :年齢  %>
+    <%= form.text_field :content %>
+  </div>
+  <br></br>
+  <div class="field">
+  <%= form.label :photo %>
+  <%= form.file_field :image, id: :feed_image %>
+  <%= form.hidden_field :image_cache %>
+  </div>
+  <br></br>
+
+  <!-- <%= form.submit %> -->
+  <button type="submit" class="btn btn-succes">Create Memory</button>
+<% end %>
+<br></br>
+
+<%= link_to "BABY ALBUM", blogs_path %>

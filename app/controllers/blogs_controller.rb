@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.image.retrieve_from_cache!  params[:cache][:image]
+    @blog.image.retrieve_from_cache!  params[:cache][:image]if params[:cache][:image].present?
     if @blog.save
       redirect_to blogs_path, notice: "写真を投稿しました！"
     else

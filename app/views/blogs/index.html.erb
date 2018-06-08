@@ -25,12 +25,14 @@
         <tr>
           <td><%= link_to '確認する', blog_path(blog.id) %></td>
         </tr>
-        <tr>
-          <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
-        </tr>
-        <tr>
-          <td><%= link_to '削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
-        </tr>
+        <% if logged_in? %>
+          <tr>
+            <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
+          </tr>
+          <tr>
+            <td><%= link_to '削除する', blog_path(blog.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
+          </tr>
+        <% end %>
       </table>
     </div>
   <% end %>

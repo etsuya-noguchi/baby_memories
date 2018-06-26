@@ -25,9 +25,11 @@
     </ul>
   </header>
 </div>
+<div class="flash">
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
   <% end %>
+</div>
 
   <% if logged_in? %>
     <%= link_to "Profile", user_path(current_user.id) %>

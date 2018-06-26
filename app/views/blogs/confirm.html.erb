@@ -1,3 +1,4 @@
+<div class="flash">
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
@@ -6,6 +7,7 @@
   <%= hidden_field_tag :"cache[image]",@blog.image.cache_name %>
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
+</div>
   <%= form.submit  "登録する" %>
 <% end %>
 

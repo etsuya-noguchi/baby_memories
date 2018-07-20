@@ -24,6 +24,7 @@ class BlogsController < ApplicationController
     @blog.user_id = current_user.id
     @blog.image.retrieve_from_cache!  params[:cache][:image]if params[:cache][:image].present?
     if @blog.save
+      BlogMailer.blog_mail(@blog).deliver
       redirect_to blogs_path, notice: "写真を投稿しました！"
     else
       render 'new'

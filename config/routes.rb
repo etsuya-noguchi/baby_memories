@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
 
   get 'favorite/create'
-  
+
   get 'favorite/destroy'
 
   get 'sessions/new'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :blogs do
    collection do
      post :confirm
+     mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
    end
   end
 end

@@ -25,4 +25,11 @@
   <%= f.password_field :password_confirmation %>
 
   <%= f.submit "Create my account" %>
+
+  <div class="field">
+  <%= f.label :photo %>
+  <%= f.file_field :image, id: :feed_image %>
+  <%= f.hidden_field :image_cache %>
+  </div>
+  
 <% end %>
